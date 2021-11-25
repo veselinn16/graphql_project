@@ -33,13 +33,13 @@
     "striptags": "^3.1.1"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0",
-    "nodemon": "1.17.3",
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "babel-register": "6.26.0"
+    "babel-register": "6.26.0",
+    "cross-env": "^5.2.0",
+    "nodemon": "1.17.3"
   }
 }
