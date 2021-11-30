@@ -2,31 +2,9 @@ import express from 'express'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import typeDefs from './typeDefs';
 import { makeExecutableSchema } from 'graphql-tools';
-
-const typeDefs = `
-schema {
-  query: Query
-}
-# this is how you add a comment
-type Query {
-  # comment for this field is possible
-  hello: String
-  """
-  This is how
-  a
-  multi-line comment is made
-  """
-  name: String
-}
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => 'World',
-    name: () => 'James',
-  },
-};
+import resolvers from './resolvers';
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
 
