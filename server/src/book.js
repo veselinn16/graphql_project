@@ -1,8 +1,14 @@
-const books = [
-  { id: 1, title: 'title', description: 'description', imageUrl: 'img.png', rating: 5 }
-]
+import query from './db'
 
-export function allBooks() {
-  // TODO: add SQL query
-  return books;
+export async function allBooks() {
+  const sql = `
+  select * from hb.book;
+  `
+  try {
+    const result = await query(sql) // query returns a Promise so we need to await
+    return result.rows // returns rows returned from sql query
+  } catch (err) {
+    console.error(err)
+    throw err // return error to client
+  }
 }

@@ -17,7 +17,11 @@ type Book {
   description: String!
   imageUrl: String!
   rating: Float
+  subtitle: String
+  ratingCount: Int
 }
 `
-
+// Be careful when selecting fields - some can be in SNAKE CASE, not camelCase
+// to finx this, one option would be to add a resolver for this field BUT if you have dozens of these fields, it's not preferrable
+// to fix this elegantly, we can use humps package in query function in db.js to transform all keys
 export default typeDefs;
