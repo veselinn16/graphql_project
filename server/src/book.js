@@ -12,3 +12,9 @@ export async function allBooks() {
     throw err // return error to client
   }
 }
+
+// id is google book id
+export function imageUrl(size, id) {
+  const zoom = size === 'SMALL' ? 1 : 0
+  return `http://books.google.com/books/content?id=${id}&printsec=frontcover&img=1&zoom=${zoom}&source=gbs_api`
+}
